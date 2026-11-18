@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #071629;
+  --blue: #12385c;
+  --accent: #36a9e8;
+  --white: #ffffff;
+  --light: #eaf1f8;
+  --muted: #a9bdd1;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+header {
+  background: #06111f;
+  padding: 24px 7%;
+  border-bottom: 1px solid #1d3b57;
+}
+
+header h1 {
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: var(--white);
+}
+
+header p {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+main {
+  width: 86%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero {
+  padding: 110px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: clamp(30px, 5vw, 52px);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #06111f;
+  padding: 13px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #80cefa;
+}
+
+section:not(.hero) {
+  background: #0c2036;
+  padding: 35px;
+  margin-bottom: 30px;
+  border: 1px solid #1c3b59;
+  border-radius: 12px;
+}
+
+section h2 {
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+section p {
+  color: var(--muted);
+}
+
+#earthquake-map {
+  min-height: 280px;
+  margin-top: 25px;
+  background: #102b46;
+  border: 1px dashed #36a9e8;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  text-align: center;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  background: #06111f;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
+
+  main {
+    width: 92%;
+  }
+
+  .hero {
+    padding: 75px 0;
+  }
+
+  section:not(.hero) {
+    padding: 22px;
+  }
+}
