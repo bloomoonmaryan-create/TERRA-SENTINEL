@@ -1,1 +1,31 @@
+document.addEventListener("DOMContentLoaded", async () => {
+  const map = document.getElementById("earthquake-map");
 
+  if (!map) return;
+
+  map.textContent = "Loading earthquake data...";
+
+  try {
+    const earthquakes = await getEarthquakes();
+
+    if (earthquakes.length === 0) {
+      map.textContent = "No earthquake data available.";
+      return;
+    }
+
+    map.innerHTML = `
+      <h3>Recent Earthquakes: ${earthquakes.length}</h3>
+      <ul>
+        ${earthquakes.slice(0, 10).map(event => `
+          <li>
+            Magnitude: ${event.magnitude ?? "Unknown"}
+            — ${event.place || "Unknown location"}
+          </li>
+        `).join("")}
+      </ul>
+    `;
+  } catch (error) {
+    console.error(error);
+    map.textContent = "Unable to load earthquake data.";
+  }
+});
